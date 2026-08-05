@@ -245,9 +245,11 @@ function renderPortfolioGrid(filter = 'all') {
 
   grid.innerHTML = filtered.map(item => {
     if (item.isVideo) {
+      const clickArg = item.isDriveVideo || item.driveId ? (item.driveId || item.youtubeId) : (item.youtubeId || item.driveId);
+      const isDrive = !!(item.isDriveVideo || item.driveId);
       return `
-        <div class="portfolio-item glass-panel portfolio-video-item" onclick="openVideoPlayer('${item.youtubeId}')" style="cursor: pointer;">
-          <img src="${item.image}" alt="${item.title}" loading="lazy">
+        <div class="portfolio-item glass-panel portfolio-video-item" onclick="openVideoPlayer('${clickArg}', ${isDrive})" style="cursor: pointer;">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='assets/images/about_photographer.jpg';">
           <div class="video-play-badge" style="position: absolute; top: 1rem; right: 1rem; background: rgba(239, 68, 68, 0.9); color: #ffffff; padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; z-index: 5; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);">
             ▶ ${item.duration || 'فيديو سينمائي'}
           </div>
@@ -344,12 +346,20 @@ function renderVideosGrid() {
   `).join('');
 }
 
-// Video Player Modal
-window.openVideoPlayer = function(youtubeId) {
+// Video Player Modal (Supports YouTube & Google Drive Videos)
+window.openVideoPlayer = function(videoSource, isDrive = false) {
   const modal = document.getElementById('video-modal');
   const iframe = document.getElementById('youtube-iframe');
   if (iframe) {
-    iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+    if (isDrive || (videoSource && videoSource.includes('drive.google.com'))) {
+      let fileId = videoSource;
+      if (videoSource.includes('/file/d/')) {
+        fileId = videoSource.split('/file/d/')[1].split('/')[0];
+      }
+      iframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
+    } else {
+      iframe.src = `https://www.youtube.com/embed/${videoSource}?autoplay=1`;
+    }
   }
   if (modal) modal.classList.add('active');
 };

@@ -4,6 +4,19 @@
 
 const DEFAULT_PORTFOLIO = [
   {
+    id: 'v_apt_1bEgQx7',
+    title: 'تصوير شقة تصميم معماري مودرن',
+    category: 'videos',
+    categoryName: '🎬 الفيديوهات السينمائية',
+    image: 'https://lh3.googleusercontent.com/d/1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1=w1000',
+    isVideo: true,
+    isDriveVideo: true,
+    driveId: '1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1',
+    duration: 'تصوير معماري',
+    location: 'الرياض، المملكة العربية السعودية',
+    date: '2026-08-05'
+  },
+  {
     id: 'v_pOg-Lwk-HN0',
     title: 'عرض كبتشرها السينمائي الخاص | CAPTURHA Showreel',
     category: 'videos',
@@ -241,6 +254,21 @@ class DataStore {
       localStorage.setItem('capturha_portfolio', JSON.stringify(DEFAULT_PORTFOLIO));
     } else {
       const items = JSON.parse(localStorage.getItem('capturha_portfolio')) || [];
+      if (!items.find(i => i.driveId === '1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1')) {
+        items.unshift({
+          id: 'v_apt_1bEgQx7',
+          title: 'تصوير شقة تصميم معماري مودرن',
+          category: 'videos',
+          categoryName: '🎬 الفيديوهات السينمائية',
+          image: 'https://lh3.googleusercontent.com/d/1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1=w1000',
+          isVideo: true,
+          isDriveVideo: true,
+          driveId: '1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1',
+          duration: 'تصوير معماري',
+          location: 'الرياض، المملكة العربية السعودية',
+          date: '2026-08-05'
+        });
+      }
       if (!items.find(i => i.youtubeId === 'pOg-Lwk-HN0')) {
         items.unshift({
           id: 'v_pOg-Lwk-HN0',
@@ -254,8 +282,8 @@ class DataStore {
           location: 'الرياض، المملكة العربية السعودية',
           date: '2026-08-05'
         });
-        localStorage.setItem('capturha_portfolio', JSON.stringify(items));
       }
+      localStorage.setItem('capturha_portfolio', JSON.stringify(items));
     }
     if (!localStorage.getItem('capturha_partners')) {
       localStorage.setItem('capturha_partners', JSON.stringify(DEFAULT_PARTNERS));
