@@ -201,26 +201,11 @@
     </div>
   </section>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="lightbox-modal">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <div class="lightbox-content">
-      <div class="lightbox-img-wrap">
-        <img id="lightbox-img" src="" alt="">
-      </div>
-      <div class="lightbox-info">
-        <div>
-          <h3 id="lightbox-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;"></h3>
-          <p id="lightbox-location" style="color: var(--text-muted); font-size: 0.95rem;"></p>
-          
-          <div style="margin-top: 2rem;">
-            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-primary);">بيانات معدات الالتقاط (EXIF Data):</h4>
-            <div id="lightbox-exif-grid" class="exif-grid"></div>
-          </div>
-        </div>
-
-        <button class="btn btn-primary" onclick="closeLightbox()" style="margin-top: 2rem;">إغلاق النافذة</button>
-      </div>
+  <!-- Lightbox Modal (Pure Clean Image Display) -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" style="top: 1.5rem; left: 1.5rem; z-index: 10;">✕</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()" style="display: flex; justify-content: center; align-items: center; background: transparent; box-shadow: none; border: none; padding: 0;">
+      <img id="lightbox-img" src="" alt="" style="max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: var(--radius-md); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
     </div>
   </div>
 
@@ -442,26 +427,18 @@
         <!-- Google Maps & Socials -->
         <div style="display: flex; flex-direction: column; justify-content: space-between;">
           <!-- WhatsApp Direct Contact Banner Card -->
-          <a href="https://wa.me/9665579332214?text=مرحباً%20استوديو%20كبتشرها،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20التصوير%20والإنتاج" target="_blank" class="whatsapp-contact-card glass-panel" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(37,211,102,0.15), rgba(18,140,126,0.25)); border: 1px solid rgba(37,211,102,0.4); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1rem; text-decoration: none; transition: all 0.3s ease;">
+          <a href="https://wa.me/message/PO3C2ATYZWF7E1" target="_blank" class="whatsapp-contact-card glass-panel" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(37,211,102,0.15), rgba(18,140,126,0.25)); border: 1px solid rgba(37,211,102,0.4); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1rem; text-decoration: none; transition: all 0.3s ease;">
             <div style="display: flex; align-items: center; gap: 1rem;">
               <img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(37,211,102,0.4));">
               <div>
                 <div style="font-weight: 800; font-size: 1.05rem; color: var(--text-main);">تواصل معنا عبر WhatsApp مباشرة</div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem; font-family: sans-serif; font-weight: 600;">+966 55 793 32214 • محادثة فورية واستفسارات على مدار الساعة</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem; font-weight: 600;">دردشة حية واستفسارات حصرية على مدار الساعة</div>
               </div>
             </div>
             <span class="btn" style="background: #25D366; color: #fff; border: none; font-weight: 700; padding: 0.5rem 1.1rem; border-radius: 50px; font-size: 0.85rem; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem;">
               <img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 18px; height: 18px; object-fit: contain;">
               محادثة فورية
             </span>
-          </a>
-
-          <a href="https://wa.me/9665579332214" target="_blank" class="glass-panel" style="padding: 1rem 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1rem; border: 1px solid var(--border-color); text-decoration: none; color: inherit;">
-            <div style="font-size: 1.75rem;">📱</div>
-            <div>
-              <div style="font-weight: 800; font-size: 1rem; color: var(--color-primary);">رقم الهاتف والتواصل المباشر</div>
-              <div style="font-weight: 700; font-size: 1.05rem; margin-top: 0.15rem; color: var(--text-main); font-family: sans-serif;">+966 55 793 32214</div>
-            </div>
           </a>
 
           <div class="glass-panel" style="padding: 1rem 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1rem; border: 1px solid var(--border-color);">
@@ -483,7 +460,7 @@
               <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 22px; height: 22px; object-fit: contain;"></a>
               <a href="https://tiktok.com" target="_blank" class="social-icon-btn" title="TikTok" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/tiktok_icon.png" alt="TikTok" style="width: 22px; height: 22px; object-fit: contain;"></a>
               <a href="mailto:info@capturha.com" class="social-icon-btn" title="Email (Gmail)" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/email_icon.png" alt="Email" style="width: 22px; height: 22px; object-fit: contain;"></a>
-              <a href="https://wa.me/9665579332214?text=مرحباً%20استوديو%20كبتشرها" target="_blank" class="social-icon-btn" title="WhatsApp (+9665579332214)" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 22px; height: 22px; object-fit: contain;"></a>
+              <a href="https://wa.me/message/PO3C2ATYZWF7E1" target="_blank" class="social-icon-btn" title="WhatsApp" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 22px; height: 22px; object-fit: contain;"></a>
             </div>
           </div>
         </div>
@@ -575,7 +552,7 @@
   <script src="js/app.js"></script>
   <script src="js/admin.js"></script>
   <!-- Floating WhatsApp Quick Action Button -->
-  <a href="https://wa.me/9665579332214?text=مرحباً%20استوديو%20كبتشرها،%20أرغب%20في%20الاستفسار%20عن%20الخدمات" target="_blank" class="floating-whatsapp-btn" title="تواصل معنا عبر WhatsApp (+9665579332214)">
+  <a href="https://wa.me/message/PO3C2ATYZWF7E1" target="_blank" class="floating-whatsapp-btn" title="تواصل معنا عبر WhatsApp">
     <img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));">
   </a>
 </body>

@@ -265,16 +265,8 @@ function renderPortfolioGrid(filter = 'all') {
       `;
     }
     return `
-      <div class="portfolio-item glass-panel" onclick="openLightbox('${item.id}')">
-        <img src="${item.image}" alt="${item.title}" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">${item.categoryName}</span>
-          <h4 class="portfolio-title">${item.title}</h4>
-          <div class="portfolio-meta">
-            <span>📍 ${item.location}</span>
-            <span>📷 ${item.exif ? item.exif.camera : ''}</span>
-          </div>
-        </div>
+      <div class="portfolio-item glass-panel" onclick="openLightbox('${item.id}')" style="cursor: pointer;">
+        <img src="${item.image}" alt="${item.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.4s ease;">
       </div>
     `;
   }).join('');
@@ -287,7 +279,7 @@ window.filterPortfolio = function(category, btnEl) {
   renderPortfolioGrid(category);
 };
 
-// Lightbox Modal
+// Lightbox Modal (Clean Pure Image Display)
 window.openLightbox = function(id) {
   const items = window.appStore.getPortfolio();
   const item = items.find(i => i.id === id);
@@ -295,23 +287,8 @@ window.openLightbox = function(id) {
 
   const modal = document.getElementById('lightbox-modal');
   const imgEl = document.getElementById('lightbox-img');
-  const titleEl = document.getElementById('lightbox-title');
-  const locEl = document.getElementById('lightbox-location');
-  const exifGrid = document.getElementById('lightbox-exif-grid');
 
   if (imgEl) imgEl.src = item.image;
-  if (titleEl) titleEl.textContent = item.title;
-  if (locEl) locEl.textContent = `موقع الالتقاط: ${item.location} | التاريخ: ${item.date}`;
-  if (exifGrid) {
-    exifGrid.innerHTML = `
-      <div class="exif-item"><span class="exif-label">الكاميرا</span><span class="exif-val">${item.exif.camera}</span></div>
-      <div class="exif-item"><span class="exif-label">العدسة</span><span class="exif-val">${item.exif.lens}</span></div>
-      <div class="exif-item"><span class="exif-label">ISO</span><span class="exif-val">${item.exif.iso}</span></div>
-      <div class="exif-item"><span class="exif-label">سرعة الغالق</span><span class="exif-val">${item.exif.shutter}</span></div>
-      <div class="exif-item"><span class="exif-label">فتحة العدسة</span><span class="exif-val">${item.exif.aperture}</span></div>
-    `;
-  }
-
   if (modal) modal.classList.add('active');
 };
 

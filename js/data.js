@@ -4,6 +4,50 @@
 
 const DEFAULT_PORTFOLIO = [
   {
+    id: 'p_nature_fog_mountains',
+    title: 'سحر تضاريس الطبيعة والضباب فوق القمم',
+    category: 'nature',
+    categoryName: '🏞️ طبيعة',
+    image: 'assets/images/nature_fog_mountains.jpg',
+    location: 'المملكة العربية السعودية',
+    date: '2026-08-05'
+  },
+  {
+    id: 'p_nature_sunstar_peaks',
+    title: 'شعاع الشمس الدافئ بين قمم الجبال والنباتات البرية',
+    category: 'nature',
+    categoryName: '🏞️ طبيعة',
+    image: 'assets/images/nature_sunstar_peaks.jpg',
+    location: 'المملكة العربية السعودية',
+    date: '2026-08-05'
+  },
+  {
+    id: 'v_mobily_drone_1vicFji',
+    title: 'تصوير جوي سينمائي (درون) - لشركة موبايلي Mobily',
+    category: 'videos',
+    categoryName: '🎬 الفيديوهات السينمائية',
+    image: 'https://lh3.googleusercontent.com/d/1vicFjiHVvfJOl_6TicvT7y-wa7x1Zvq0=w1000',
+    isVideo: true,
+    isDriveVideo: true,
+    driveId: '1vicFjiHVvfJOl_6TicvT7y-wa7x1Zvq0',
+    duration: 'تصوير جوي',
+    location: 'المملكة العربية السعودية',
+    date: '2026-08-05'
+  },
+  {
+    id: 'v_riyadh_trips_1wMNORh6',
+    title: 'تصوير فيديو شركة Riyadh Trips لتنظيم الرحلات',
+    category: 'videos',
+    categoryName: '🎬 الفيديوهات السينمائية',
+    image: 'https://lh3.googleusercontent.com/d/1wMNORh6-VltUKUYRrkNhbO4S6K0HdV3U=w1000',
+    isVideo: true,
+    isDriveVideo: true,
+    driveId: '1wMNORh6-VltUKUYRrkNhbO4S6K0HdV3U',
+    duration: 'توثيق رحلات',
+    location: 'الرياض، المملكة العربية السعودية',
+    date: '2026-08-05'
+  },
+  {
     id: 'v_apt_1bEgQx7',
     title: 'تصوير شقة تصميم معماري مودرن',
     category: 'videos',
@@ -27,115 +71,6 @@ const DEFAULT_PORTFOLIO = [
     duration: 'عرض سينمائي',
     location: 'الرياض، المملكة العربية السعودية',
     date: '2026-08-05'
-  },
-  {
-    id: 'p1',
-    title: 'سحر مجرة درب التبانة',
-    category: 'milkyway',
-    categoryName: 'درب التبانة',
-    image: 'assets/images/hero_milkyway.jpg',
-    exif: { camera: 'Sony α7R V', lens: 'FE 14mm F1.8 GM', iso: '3200', shutter: '15s', aperture: 'f/1.8' },
-    location: 'صحراء الربع الخالي',
-    date: '2025-05-12'
-  },
-  {
-    id: 'p2',
-    title: 'قمم الجبال عند الغروب السينمائي',
-    category: 'nature',
-    categoryName: 'الطبيعة',
-    image: 'assets/images/landscape_nature.jpg',
-    exif: { camera: 'Sony FX6', lens: 'FE 24-70mm F2.8 GM II', iso: '100', shutter: '1/250s', aperture: 'f/8.0' },
-    location: 'جبال العُلا',
-    date: '2025-03-20'
-  },
-  {
-    id: 'p3',
-    title: 'ليلة تخييم تحت السماء الفلكية',
-    category: 'camping',
-    categoryName: 'التخييم',
-    image: 'assets/images/hero_milkyway.jpg',
-    exif: { camera: 'Sony α1', lens: 'FE 24mm F1.4 GM', iso: '2500', shutter: '20s', aperture: 'f/1.4' },
-    location: 'وادي الديسة',
-    date: '2025-04-10'
-  },
-  {
-    id: 'p4',
-    title: 'فخامة السيارات بين أضواء الليل',
-    category: 'automotive',
-    categoryName: 'السيارات',
-    image: 'assets/images/commercial_automotive.jpg',
-    exif: { camera: 'Sony α7 IV', lens: 'FE 50mm F1.2 GM', iso: '400', shutter: '1/60s', aperture: 'f/1.8' },
-    location: 'طريق الرياض الهدا',
-    date: '2025-06-01'
-  },
-  {
-    id: 'p5',
-    title: 'صانع المحتوى وسط الطبيعة العذراء',
-    category: 'travel',
-    categoryName: 'الرحلات',
-    image: 'assets/images/about_photographer.jpg',
-    exif: { camera: 'Sony FX3', lens: 'FE 16-35mm F2.8 GM II', iso: '200', shutter: '1/500s', aperture: 'f/2.8' },
-    location: 'مرتفعات السودة',
-    date: '2025-02-18'
-  },
-  {
-    id: 'p6',
-    title: 'أضواء النجوم والشهب المتساقطة',
-    category: 'stars',
-    categoryName: 'النجوم',
-    image: 'assets/images/hero_milkyway.jpg',
-    exif: { camera: 'Sony α7S III', lens: 'FE 20mm F1.8 G', iso: '6400', shutter: '10s', aperture: 'f/1.8' },
-    location: 'حائل - جبال أجا',
-    date: '2025-07-04'
-  },
-  {
-    id: 'p7',
-    title: 'حملة إعلانية سينمائية تجارية',
-    category: 'commercial',
-    categoryName: 'الأعمال التجارية',
-    image: 'assets/images/commercial_automotive.jpg',
-    exif: { camera: 'Sony FX6 Cinema', lens: 'Leica Summicron-C', iso: '800', shutter: '1/50s', aperture: 'f/2.0' },
-    location: 'استوديو كبتشرها - الرياض',
-    date: '2025-07-22'
-  },
-  {
-    id: 'p_v1',
-    title: 'فيلم وثائقي: أسرار السماء الليلية في صحاري المملكة',
-    category: 'videos',
-    categoryName: 'الفيديوهات السينمائية',
-    image: 'assets/images/hero_milkyway.jpg',
-    isVideo: true,
-    youtubeId: 'L_LUpnjgPso',
-    duration: '08:45',
-    exif: { camera: 'Sony FX6 Cinema', lens: 'FE 14mm F1.8 GM', iso: '3200', shutter: '1/50s', aperture: 'f/1.8' },
-    location: 'صحراء الربع الخالي',
-    date: '2025-08-01'
-  },
-  {
-    id: 'p_v2',
-    title: 'إعلان تجاري سينمائي: رحلة اكتشاف الطبيعة بالدرون 5K',
-    category: 'videos',
-    categoryName: 'الفيديوهات السينمائية',
-    image: 'assets/images/drone_aerial_coastal.jpg',
-    isVideo: true,
-    youtubeId: 'dQw4w9WgXcQ',
-    duration: '02:30',
-    exif: { camera: 'DJI Mavic 3 Cine', lens: 'Hasselblad 24mm', iso: '400', shutter: '1/200s', aperture: 'f/2.8' },
-    location: 'شواطئ نيوم',
-    date: '2025-07-28'
-  },
-  {
-    id: 'p_v3',
-    title: 'تايم لابس سينمائي 8K: حركة النجوم فوق جبال العُلا',
-    category: 'videos',
-    categoryName: 'الفيديوهات السينمائية',
-    image: 'assets/images/landscape_nature.jpg',
-    isVideo: true,
-    youtubeId: 'L_LUpnjgPso',
-    duration: '04:15',
-    exif: { camera: 'Sony α7R V', lens: 'FE 24mm F1.4 GM', iso: '1600', shutter: '25s', aperture: 'f/1.4' },
-    location: 'جبال العُلا',
-    date: '2025-06-15'
   }
 ];
 
@@ -250,41 +185,17 @@ class DataStore {
   }
 
   init() {
-    if (!localStorage.getItem('capturha_portfolio')) {
-      localStorage.setItem('capturha_portfolio', JSON.stringify(DEFAULT_PORTFOLIO));
-    } else {
-      const items = JSON.parse(localStorage.getItem('capturha_portfolio')) || [];
-      if (!items.find(i => i.driveId === '1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1')) {
-        items.unshift({
-          id: 'v_apt_1bEgQx7',
-          title: 'تصوير شقة تصميم معماري مودرن',
-          category: 'videos',
-          categoryName: '🎬 الفيديوهات السينمائية',
-          image: 'https://lh3.googleusercontent.com/d/1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1=w1000',
-          isVideo: true,
-          isDriveVideo: true,
-          driveId: '1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1',
-          duration: 'تصوير معماري',
-          location: 'الرياض، المملكة العربية السعودية',
-          date: '2026-08-05'
-        });
+    let items = JSON.parse(localStorage.getItem('capturha_portfolio')) || [];
+    const sampleIds = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p_v1', 'p_v2', 'p_v3', 'n1_1lQqox', 'n2_1lQqox', 'n3_1lQqox'];
+    items = items.filter(item => item && !sampleIds.includes(item.id));
+
+    DEFAULT_PORTFOLIO.forEach(defItem => {
+      if (!items.find(i => i.id === defItem.id)) {
+        items.unshift(defItem);
       }
-      if (!items.find(i => i.youtubeId === 'pOg-Lwk-HN0')) {
-        items.unshift({
-          id: 'v_pOg-Lwk-HN0',
-          title: 'عرض كبتشرها السينمائي الخاص | CAPTURHA Showreel',
-          category: 'videos',
-          categoryName: '🎬 الفيديوهات السينمائية',
-          image: 'https://img.youtube.com/vi/pOg-Lwk-HN0/hqdefault.jpg',
-          isVideo: true,
-          youtubeId: 'pOg-Lwk-HN0',
-          duration: 'عرض سينمائي',
-          location: 'الرياض، المملكة العربية السعودية',
-          date: '2026-08-05'
-        });
-      }
-      localStorage.setItem('capturha_portfolio', JSON.stringify(items));
-    }
+    });
+
+    localStorage.setItem('capturha_portfolio', JSON.stringify(items));
     if (!localStorage.getItem('capturha_partners')) {
       localStorage.setItem('capturha_partners', JSON.stringify(DEFAULT_PARTNERS));
     }
@@ -309,18 +220,17 @@ class DataStore {
     if (!localStorage.getItem('capturha_about_text')) {
       localStorage.setItem('capturha_about_text', 'كبتشرها علامة متخصصة في التصوير الفوتوغرافي وصناعة الأفلام، نقدم حلولًا بصرية احترافية تجمع بين الإبداع والدقة لنروي القصص بأعلى جودة، سواء للأفراد أو الشركات.');
     }
-    if (!localStorage.getItem('capturha_portfolio_categories')) {
-      localStorage.setItem('capturha_portfolio_categories', JSON.stringify([
-        { id: 'all', name: 'الكل (صور وفيديوهات)', type: 'all', visible: true, locked: true },
-        { id: 'videos', name: '🎬 الفيديوهات السينمائية', type: 'video', visible: true },
-        { id: 'nature', name: 'الطبيعة', type: 'photo', visible: true },
-        { id: 'stars', name: 'النجوم', type: 'photo', visible: true },
-        { id: 'milkyway', name: 'درب التبانة', type: 'photo', visible: true },
-        { id: 'camping', name: 'التخييم', type: 'photo', visible: true },
-        { id: 'travel', name: 'الرحلات', type: 'photo', visible: true },
-        { id: 'automotive', name: 'السيارات', type: 'photo', visible: true },
-        { id: 'commercial', name: 'الأعمال التجارية', type: 'photo', visible: true }
-      ]));
+    const defaultCategories = [
+      { id: 'all', name: '✨ الكل', type: 'all', visible: true, locked: true },
+      { id: 'nature', name: '🏞️ طبيعة', type: 'photo', visible: true },
+      { id: 'products', name: '📦 منتجات', type: 'photo', visible: true },
+      { id: 'outdoor_trips', name: '🏕️ رحلات وتوثيق خارجي', type: 'photo', visible: true },
+      { id: 'events', name: '🎉 مناسبات', type: 'photo', visible: true },
+      { id: 'coverage', name: '📸 تغطيات', type: 'photo', visible: true },
+      { id: 'videos', name: '🎬 الفيديوهات السينمائية', type: 'video', visible: true }
+    ];
+    if (!localStorage.getItem('capturha_portfolio_categories') || true) {
+      localStorage.setItem('capturha_portfolio_categories', JSON.stringify(defaultCategories));
     }
     if (!localStorage.getItem('capturha_messages')) {
       localStorage.setItem('capturha_messages', JSON.stringify([
@@ -344,15 +254,13 @@ class DataStore {
 
   getPortfolioCategories() {
     return JSON.parse(localStorage.getItem('capturha_portfolio_categories')) || [
-      { id: 'all', name: 'الكل (صور وفيديوهات)', type: 'all', visible: true, locked: true },
-      { id: 'videos', name: '🎬 الفيديوهات السينمائية', type: 'video', visible: true },
-      { id: 'nature', name: 'الطبيعة', type: 'photo', visible: true },
-      { id: 'stars', name: 'النجوم', type: 'photo', visible: true },
-      { id: 'milkyway', name: 'درب التبانة', type: 'photo', visible: true },
-      { id: 'camping', name: 'التخييم', type: 'photo', visible: true },
-      { id: 'travel', name: 'الرحلات', type: 'photo', visible: true },
-      { id: 'automotive', name: 'السيارات', type: 'photo', visible: true },
-      { id: 'commercial', name: 'الأعمال التجارية', type: 'photo', visible: true }
+      { id: 'all', name: '✨ الكل', type: 'all', visible: true, locked: true },
+      { id: 'nature', name: '🏞️ طبيعة', type: 'photo', visible: true },
+      { id: 'products', name: '📦 منتجات', type: 'photo', visible: true },
+      { id: 'outdoor_trips', name: '🏕️ رحلات وتوثيق خارجي', type: 'photo', visible: true },
+      { id: 'events', name: '🎉 مناسبات', type: 'photo', visible: true },
+      { id: 'coverage', name: '📸 تغطيات', type: 'photo', visible: true },
+      { id: 'videos', name: '🎬 الفيديوهات السينمائية', type: 'video', visible: true }
     ];
   }
 
