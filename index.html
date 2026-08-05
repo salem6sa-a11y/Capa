@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كبتشرها | CAPTURHA - استوديو التصوير الفاخر وصناعة الأفلام</title>
+  <meta name="description" content="كبتشرها | CAPTURHA علامة تجارية فاخرة متخصصة في التصوير الفوتوغرافي، التصوير الفلكي، صناعة الأفلام الوثائقية، تصوير الرحلات، والتصوير التجاري.">
+  <meta name="keywords" content="كبتشرها, تصوير فلكي, درب التبانة, تصوير طبيعة, صناعة أفلام, تصوير درون, تايم لابس, استوديو تصوير السعودية">
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="loader-logo" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <img src="assets/images/capturha_logos.png" alt="كبتشرها | CAPTURHA" style="height: 70px; object-fit: contain; filter: drop-shadow(0 0 15px var(--color-primary-glow));">
+    </div>
+    <div class="loader-bar" style="margin-top: 1.5rem;">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Glassmorphism Header & Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="assets/images/capturha_logos.png" alt="كبتشرها | CAPTURHA" class="brand-logo-img">
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
+        <li><a href="#about" class="nav-link">من نحن</a></li>
+        <li><a href="#services-section" class="nav-link">الخدمات</a></li>
+        <li><a href="#portfolio-section" class="nav-link">معرض الأعمال</a></li>
+        <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="theme-btn" title="تبديل الوضع الليلي / الفاتح">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+
+        <button class="btn btn-outline admin-nav-btn" onclick="openAdminModal()" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+          🔐 لوحة التحكم
+        </button>
+
+        <button id="mobile-menu-btn" class="mobile-toggle" onclick="toggleMobileMenu()" title="القائمة">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile & Tablet Nav Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/capturha_logos.png" alt="كبتشرها | CAPTURHA" class="brand-logo-img" style="height: 38px;">
+      <button class="mobile-drawer-close" onclick="toggleMobileMenu()">✕</button>
+    </div>
+    <ul class="mobile-drawer-menu">
+      <li><a href="#hero" onclick="toggleMobileMenu()">الرئيسية</a></li>
+      <li><a href="#about" onclick="toggleMobileMenu()">من نحن</a></li>
+      <li><a href="#services-section" onclick="toggleMobileMenu()">الخدمات</a></li>
+      <li><a href="#portfolio-section" onclick="toggleMobileMenu()">معرض الأعمال</a></li>
+      <li><a href="#contact" onclick="toggleMobileMenu()">تواصل معنا</a></li>
+    </ul>
+    <div style="padding: 1.5rem 1rem; border-top: 1px solid var(--border-color);">
+      <button class="btn btn-primary" onclick="toggleMobileMenu(); openAdminModal();" style="width: 100%;">🔐 دخول لوحة التحكم</button>
+    </div>
+  </div>
+
+  <!-- Hero Section with Canvas Astrophotography Background -->
+  <section id="hero" class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 id="hero-title-text" class="hero-title">كبتشرها</h1>
+      <p id="hero-subtitle-text" class="hero-subtitle">نلتقط اللحظات... ونروي القصة.</p>
+      
+      <div class="hero-btns">
+        <a href="#portfolio-section" class="btn btn-primary">📸 استعرض الأعمال</a>
+        <a href="#services-section" class="btn btn-secondary">💼 خدماتنا الاحترافية</a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator">
+      <span>التمرير للاستكشاف</span>
+      ↓
+    </a>
+  </section>
+
+  <!-- About Us Section (من نحن) -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-container glass-panel">
+          <img src="assets/images/about_riyadh.jpg" alt="استوديو كبتشرها - الرياض">
+        </div>
+
+        <div class="about-text-content">
+          <div style="color: var(--color-primary); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">من نحن</div>
+          <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1.25rem;">نصنع قصصًا تُروى بالصورة</h3>
+          <p id="about-text-content" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
+            كبتشرها علامة متخصصة في التصوير الفوتوغرافي وصناعة الأفلام، نقدم حلولًا بصرية احترافية تجمع بين الإبداع والدقة لنروي القصص بأعلى جودة، سواء للأفراد أو الشركات.
+          </p>
+          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
+            نقدم خدمات متكاملة تشمل تغطية المناسبات والاحتفالات، والمعارض والفعاليات، والتصوير الشخصي، وإنتاج الأفلام والمحتوى السينمائي، بالإضافة إلى تصوير الطبيعة والرحلات والتصوير الفلكي والتصوير الجوي، مع الاهتمام بأدق التفاصيل للوصول إلى تجربة بصرية استثنائية.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section (خدماتنا) -->
+  <section id="services-section" class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>خدماتنا الاحترافية</h2>
+        <p>حلول بصرية متكاملة تجمع بين الإبداع والتقنيات السينمائية الحديثة لخدمة الأفراد والشركات.</p>
+      </div>
+
+      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.75rem;">
+        <!-- Service 1 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">🎉</div>
+          <h3>تصوير التغطيات (مناسبات • معارض • فعاليات)</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">تغطية وثائقية احترافية للمناسبات، الاحتفالات، المعارض، والمؤتمرات والفعاليات الضخمة بأعلى معايير الدقة.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">📸</div>
+          <h3>التصوير الشخصي والبورتريه</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">جلسات تصوير بورتوريه احترافي للأفراد، القادة، والشركات مع توزيع إضاءة سينمائي وتوجيه محترف.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">📺</div>
+          <h3>تصوير وإنتاج الإعلانات</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">إنتاج إعلانات تجارية وبصرية مبتكرة للشركات والمنتجات تبرز العلامة التجارية وتخاطب الجمهور المستهدف.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">📱</div>
+          <h3>تصوير وصناعة المحتوى</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">صناعة محتوى مرئي سينمائي لمنصات التواصل الاجتماعي (Reels, TikTok, YouTube) بأسلوب عصري وسريع التفاعل.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">🎬</div>
+          <h3>صناعة الأفلام والإنتاج السينمائي</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">إنتاج أفلام وثائقية وسينمائية متكاملة تبدأ من الفكرة والسيناريو وصولاً للإنتاج النهائي بأعلى جودة.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">🌌</div>
+          <h3>التصوير الفلكي وتصوير الطبيعة والرحلات</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">احترافية استثنائية في توثيق مجرة درب التبانة، النجوم، والمناظر الطبيعية والرحلات الاستكشافية.</p>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">🚁</div>
+          <h3>التصوير الجوي بدقة عالية</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">مشاهد ولقطات جوية سينمائية بالدرون بدقة 5K فائقة لتوثيق المشاريع والفعاليات والمناظر من زوايا مبهرة.</p>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card glass-panel">
+          <div class="service-icon">🎨</div>
+          <h3>المونتاج والتلوين السينمائي الاحترافي</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">معالجة وتصحيح ألوان سينمائي (Color Grading) ومونتاج دقيق يمنح المشاهد الحياة والجاذبية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Masonry Gallery (معرض الأعمال) -->
+  <section id="portfolio-section" class="portfolio-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>معرض الأعمال</h2>
+        <p>تصفح أحدث التحف البصرية واللقطات الفلكية المصورة بأفضل كاميرات وعدسات العالم.</p>
+      </div>
+
+      <!-- Filter Category Tabs -->
+      <div id="portfolio-filter-tabs" class="filter-tabs"></div>
+
+      <!-- Masonry Grid Container -->
+      <div id="portfolio-masonry-grid" class="masonry-grid"></div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-info">
+        <div>
+          <h3 id="lightbox-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;"></h3>
+          <p id="lightbox-location" style="color: var(--text-muted); font-size: 0.95rem;"></p>
+          
+          <div style="margin-top: 2rem;">
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-primary);">بيانات معدات الالتقاط (EXIF Data):</h4>
+            <div id="lightbox-exif-grid" class="exif-grid"></div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="closeLightbox()" style="margin-top: 2rem;">إغلاق النافذة</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Player Modal -->
+  <div id="video-modal" class="video-modal">
+    <div class="video-player-container">
+      <button class="lightbox-close" onclick="closeVideoPlayer()" style="top: 1rem; left: 1rem; z-index: 10;">✕</button>
+      <iframe id="youtube-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Statistics &      <div id="partners-grid-container" class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem;"></div>
+    </div>
+  </section>�بدعة</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">صناعة المحتوى والمشاريع الشبابية</p>
+        </div>
+
+        <div class="partner-card glass-panel" style="padding: 2rem; text-align: center; border-radius: var(--radius-md); transition: transform 0.3s ease;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🌐</div>
+          <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">مجموعة نيوم للابتكار</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">التغطيات الجوية والوثائقية</p>
+        </div>
+
+        <div class="partner-card glass-panel" style="padding: 2rem; text-align: center; border-radius: var(--radius-md); transition: transform 0.3s ease;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🏔️</div>
+          <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">شركة العُلا للسياحة والاستكشاف</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">توثيق المناظر والرحلات</p>
+        </div>
+
+        <div class="partner-card glass-panel" style="padding: 2rem; text-align: center; border-radius: var(--radius-md); transition: transform 0.3s ease;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🎥</div>
+          <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">استوديو سوني السينمائي</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">شريك المعدات والتقنيات الرسمية</p>
+        </div>
+
+        <div class="partner-card glass-panel" style="padding: 2rem; text-align: center; border-radius: var(--radius-md); transition: transform 0.3s ease;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📸</div>
+          <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">الجمعية السعودية للتصوير</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">شريك الورش والتدريب الفوتوغرافي</p>
+        </div>
+
+        <div class="partner-card glass-panel" style="padding: 2rem; text-align: center; border-radius: var(--radius-md); transition: transform 0.3s ease;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🎬</div>
+          <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">نادي صُنّاع المحتوى والسينما</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">مجتمع الإنتاج البصري الاحترافي</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Feeds (Instagram & YouTube) -->
+  <section id="social-feeds-section" class="social-feeds-section">
+    <div class="container">
+      <div class="social-feeds-grid">
+        <!-- Instagram Feed -->
+        <div class="social-box">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/images/instagram_icon.png" alt="Instagram" style="width: 26px; height: 26px; object-fit: contain;"> أحدث المنشورات على Instagram</h3>
+          <div class="insta-grid">
+            <div class="insta-item"><img src="assets/images/hero_milkyway.jpg" alt="Instagram Post"></div>
+            <div class="insta-item"><img src="assets/images/landscape_nature.jpg" alt="Instagram Post"></div>
+            <div class="insta-item"><img src="assets/images/about_photographer.jpg" alt="Instagram Post"></div>
+            <div class="insta-item"><img src="assets/images/commercial_automotive.jpg" alt="Instagram Post"></div>
+            <div class="insta-item"><img src="assets/images/hero_milkyway.jpg" alt="Instagram Post"></div>
+            <div class="insta-item"><img src="assets/images/landscape_nature.jpg" alt="Instagram Post"></div>
+          </div>
+        </div>
+
+        <!-- YouTube Feed -->
+        <div class="social-box">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 26px; height: 26px; object-fit: contain;"> أحدث الأفلام على YouTube</h3>
+          <div class="yt-card glass-panel">
+            <div class="yt-video-embed">
+              <iframe src="https://www.youtube.com/embed/L_LUpnjgPso" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h4 style="font-weight: 700; font-size: 1.1rem;">قناة كبتشرها | CAPTURHA Official</h4>
+                <p style="color: var(--text-dim); font-size: 0.85rem;">اشترك لمتابعة الأفلام والدروس السينمائية</p>
+              </div>
+              <a href="https://youtube.com" target="_blank" class="btn btn-primary" style="background: #ff0000; box-shadow: 0 5px 20px rgba(255,0,0,0.4); display: flex; align-items: center; gap: 0.4rem;">
+                <img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1);">
+                اشترك بالقناة
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Features Section Showcase (مميزات مستقبلية) -->
+  <section id="future-features-section" style="padding: 6rem 0; background: rgba(53, 94, 168, 0.03);">
+    <div class="container">
+      <div class="section-title">
+        <h2>منظومة كبتشرها الرقمية الشاملة</h2>
+        <p>نعمل على تطوير مميزات حصرية لدعم عملائنا وعشاق التصوير قريباً.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+        <div class="glass-panel" style="padding: 2rem; text-align: center; cursor: pointer;" onclick="openFeatureModal('booking')">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📅</div>
+          <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">حجز جلسات تصوير</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">نظام حجز مسبق وجدول زمني للجلسات والرحلات</p>
+        </div>
+
+        <div class="glass-panel" style="padding: 2rem; text-align: center; cursor: pointer;" onclick="openFeatureModal('printshop')">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🖼️</div>
+          <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">متجر طباعة الصور</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">طباعة لوحات فاخرة بدقة المعارض العالمية</p>
+        </div>
+
+        <div class="glass-panel" style="padding: 2rem; text-align: center; cursor: pointer;" onclick="openFeatureModal('presets')">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+          <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">متجر المنتجات الرقمية</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">فلترات Lightroom و LUTs سينمائية جاهزة</p>
+        </div>
+
+        <div class="glass-panel" style="padding: 2rem; text-align: center; cursor: pointer;" onclick="openFeatureModal('clientportal')">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔒</div>
+          <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">معارض العملاء الخاصة</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">معرض صور محمي بكلمة مرور لكل عميل</p>
+        </div>
+
+        <div class="glass-panel" style="padding: 2rem; text-align: center; cursor: pointer;" onclick="openFeatureModal('workshops')">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎓</div>
+          <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">الورش والدورات التدريبية</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">دورات احترافية في التصوير الفلكي والإنتاج</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Features Preview Drawers / Modals -->
+  <div id="feature-modal-booking" class="drawer-modal">
+    <div class="glass-panel" style="max-width: 500px; width: 90%; padding: 2.5rem; text-align: center;">
+      <h3>📅 نظام حجز جلسات التصوير</h3>
+      <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">احجز جلسة تصوير فلكي، تجاري، أو رحلة تخييم خاصة معك فريق كبتشرها.</p>
+      <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; text-align: right;">
+        <label style="font-size: 0.85rem; color: var(--text-dim);">اختر نوع الجلسة المطلوبة:</label>
+        <select class="form-control" style="margin-top: 0.5rem;">
+          <option>جلسة تصوير فلكي وطبيعة خاصة</option>
+          <option>تصوير فيديو تجاري / إعلاني</option>
+          <option>تغطية رحلة تخييم واستكشاف</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="closeFeatureModal('booking')">إغلاق المعاينة</button>
+    </div>
+  </div>
+
+  <div id="feature-modal-printshop" class="drawer-modal">
+    <div class="glass-panel" style="max-width: 500px; width: 90%; padding: 2.5rem; text-align: center;">
+      <h3>🖼️ متجر طباعة اللوحات الفاخرة</h3>
+      <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">اطلب مطبوعات كانفاس وإطارات فاخرة لأجمل لقطات المجرات والطبيعة.</p>
+      <button class="btn btn-primary" onclick="closeFeatureModal('printshop')">إغلاق المعاينة</button>
+    </div>
+  </div>
+
+  <div id="feature-modal-presets" class="drawer-modal">
+    <div class="glass-panel" style="max-width: 500px; width: 90%; padding: 2.5rem; text-align: center;">
+      <h3>🎨 المتجر الرقمي (Presets & LUTs)</h3>
+      <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">حزم فلترات كبتشرها المخصصة للتصوير الفلكي وتصحيح ألوان الفيديو.</p>
+      <button class="btn btn-primary" onclick="closeFeatureModal('presets')">إغلاق المعاينة</button>
+    </div>
+  </div>
+
+  <div id="feature-modal-clientportal" class="drawer-modal">
+    <div class="glass-panel" style="max-width: 500px; width: 90%; padding: 2.5rem; text-align: center;">
+      <h3>🔒 بوابـة العملاء الخاصة</h3>
+      <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">أدخل كود العميل وكلمة المرور لاستعراض وتحميل صور وفيديوهات مشروعك.</p>
+      <input type="password" class="form-control" placeholder="أدخل كلمة المرور الخاص بك..." style="margin-bottom: 1.5rem;">
+      <button class="btn btn-primary" onclick="closeFeatureModal('clientportal')">إغلاق المعاينة</button>
+    </div>
+  </div>
+
+  <div id="feature-modal-workshops" class="drawer-modal">
+    <div class="glass-panel" style="max-width: 500px; width: 90%; padding: 2.5rem; text-align: center;">
+      <h3>🎓 ورش عمل ودورات كبتشرها</h3>
+      <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">انضم إلى دوراتنا الميدانية لتعلم مهارات التصوير الفلكي والتعامل مع النجوم.</p>
+      <button class="btn btn-primary" onclick="closeFeatureModal('workshops')">إغلاق المعاينة</button>
+    </div>
+  </div>
+
+  <!-- Contact Us Section (تواصل معنا) -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>تواصل معنا</h2>
+        <p>هل لديك مشروع أو فكرة فيلم وثائقي؟ يسعدنا التواصل معك لبدء رحلة الإبداع.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-card glass-panel">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name">الاسم الكامل</label>
+              <input type="text" id="contact-name" class="form-control" required placeholder="أدخل اسمك الكريم">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">البريد الإلكتروني</label>
+              <input type="email" id="contact-email" class="form-control" required placeholder="name@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-phone">رقم الجوال</label>
+              <input type="tel" id="contact-phone" class="form-control" required placeholder="05xxxxxxxx">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">تفاصيل الرسالة أو المشروع</label>
+              <textarea id="contact-message" class="form-control" rows="4" required placeholder="اكتب تفاصيل استفسارك أو طلبك هنا..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">✉️ إرسال الرسالة</button>
+          </form>
+        </div>
+
+        <!-- Google Maps & Socials -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+          <!-- WhatsApp Direct Contact Banner Card -->
+          <a href="https://wa.me/966500000000?text=مرحباً%20استوديو%20كبتشرها،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20التصوير%20والإنتاج" target="_blank" class="whatsapp-contact-card glass-panel" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(37,211,102,0.15), rgba(18,140,126,0.25)); border: 1px solid rgba(37,211,102,0.4); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1rem; text-decoration: none; transition: all 0.3s ease;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(37,211,102,0.4));">
+              <div>
+                <div style="font-weight: 800; font-size: 1.05rem; color: var(--text-main);">تواصل معنا عبر WhatsApp مباشرة</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem;">دردشة حية واستفسارات حصرية على مدار الساعة</div>
+              </div>
+            </div>
+            <span class="btn" style="background: #25D366; color: #fff; border: none; font-weight: 700; padding: 0.5rem 1.1rem; border-radius: 50px; font-size: 0.85rem; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem;">
+              <img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 18px; height: 18px; object-fit: contain;">
+              محادثة فورية
+            </span>
+          </a>
+          <div class="glass-panel" style="padding: 1.25rem 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1rem; border: 1px solid var(--border-color);">
+            <div style="font-size: 1.75rem;">📍</div>
+            <div>
+              <div style="font-weight: 800; font-size: 1.05rem; color: var(--color-primary);">المقر الرئيسي والإنتاج</div>
+              <div style="font-weight: 600; font-size: 0.95rem; margin-top: 0.15rem;">استوديو كبتشرها • الرياض، المملكة العربية السعودية</div>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.6738720875084!2d46.6752957!3d24.7135517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2ssa" loading="lazy"></iframe>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <div style="font-weight: 700; margin-bottom: 0.75rem;">تابعنا على الشبكات الاجتماعية:</div>
+            <div class="social-links">
+              <a href="https://instagram.com" target="_blank" class="social-icon-btn" title="Instagram" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/instagram_icon.png" alt="Instagram" style="width: 22px; height: 22px; object-fit: contain;"></a>
+              <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 22px; height: 22px; object-fit: contain;"></a>
+              <a href="https://tiktok.com" target="_blank" class="social-icon-btn" title="TikTok" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/tiktok_icon.png" alt="TikTok" style="width: 22px; height: 22px; object-fit: contain;"></a>
+              <a href="mailto:info@capturha.com" class="social-icon-btn" title="Email (Gmail)" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/email_icon.png" alt="Email" style="width: 22px; height: 22px; object-fit: contain;"></a>
+              <a href="https://wa.me/966500000000?text=مرحباً%20استوديو%20كبتشرها" target="_blank" class="social-icon-btn" title="WhatsApp" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 22px; height: 22px; object-fit: contain;"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Authentication Login Modal -->
+  <div id="admin-login-modal" class="drawer-modal">
+    <div class="glass-panel" style="max-width: 440px; width: 92%; padding: 2.5rem; border-radius: var(--radius-lg); text-align: center; position: relative;">
+      <button class="lightbox-close" onclick="closeAdminLoginModal()" style="top: 1rem; left: 1rem;">✕</button>
+      
+      <div style="margin-bottom: 1.5rem;">
+        <img src="assets/images/favicon.png" alt="كبتشرها Emblem" style="height: 64px; width: 64px; object-fit: contain; margin-bottom: 0.75rem;">
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">دخول لوحة التحكم</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">الرجاء إدخال بيانات الدخول لإدارة محتوى كبتشرها وصلاحيات النظام.</p>
+      </div>
+
+      <form id="admin-login-form" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: right;">
+        <div class="form-group" style="margin-bottom: 0;">
+          <label style="font-size: 0.85rem; font-weight: 600;">اسم المستخدم (Username)</label>
+          <input type="text" id="admin-user-input" class="form-control" required placeholder="admin">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+          <label style="font-size: 0.85rem; font-weight: 600;">كلمة المرور (Password)</label>
+          <input type="password" id="admin-pass-input" class="form-control" required placeholder="••••••••">
+        </div>
+
+        <div id="admin-login-error" style="color: #ef4444; font-size: 0.85rem; display: none; text-align: center; font-weight: 600;">
+          ❌ اسم المستخدم أو كلمة المرور غير صحيحة!
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">🔑 تسجيل الدخول للوحة</button>
+      </form>
+
+      <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: var(--text-dim);">
+        🔐 بيانات الدخول الافتراضية: المستخدم <code>admin</code> / كلمة المرور <code>capturha</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard Modal -->
+  <div id="admin-modal" class="admin-modal">
+    <div class="admin-container">
+      <div class="admin-sidebar">
+        <div style="font-weight: 800; font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; padding: 0 0.5rem;">
+          ⚙️ لوحة التحكم
+        </div>
+        <div style="font-size: 0.8rem; color: #60a5fa; margin-bottom: 1.25rem; padding: 0 0.5rem;">
+          👤 الحساب: <span id="admin-session-user">المدير العام</span> (الكل)
+        </div>
+
+        <button id="admin-tab-btn-portfolio" class="admin-tab-btn active" onclick="switchAdminTab('portfolio')">📷 إدارة صور المعرض</button>
+        <button id="admin-tab-btn-categories" class="admin-tab-btn" onclick="switchAdminTab('categories')">🖼️ أقسام وتصنيفات المعرض</button>
+        <button id="admin-tab-btn-partners" class="admin-tab-btn" onclick="switchAdminTab('partners')">🏛️ شركاء النجاح والعلامات</button>
+        <button id="admin-tab-btn-homepage" class="admin-tab-btn" onclick="switchAdminTab('homepage')">🏠 نصوص الرئيسية</button>
+        <button id="admin-tab-btn-articles" class="admin-tab-btn" onclick="switchAdminTab('articles')">📝 مقالات المدونة</button>
+        <button id="admin-tab-btn-messages" class="admin-tab-btn" onclick="switchAdminTab('messages')">📬 رسائل العملاء</button>
+        <button id="admin-tab-btn-visibility" class="admin-tab-btn" onclick="switchAdminTab('visibility')">👁️ إظهار وإخفاء القوائم</button>
+
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
+          <button class="btn btn-outline" onclick="logoutAdminSession()" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5; font-size: 0.85rem; padding: 0.5rem;">🚪 تسجيل الخروج</button>
+          <button class="btn btn-outline" onclick="closeAdminModal()" style="border-color: rgba(255,255,255,0.2); color: #fff; font-size: 0.85rem; padding: 0.5rem;">إغلاق النافذة</button>
+        </div>
+      </div>
+
+      <div id="admin-tab-content" class="admin-content"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <img src="assets/images/capturha_logos.png" alt="كبتشرها | CAPTURHA" class="footer-logo-img">
+        <p class="footer-tagline">نصنع الذكريات... بعدسة تحكي القصة.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2026 كبتشرها | CAPTURHA. تصميم واستوديو إنتاج سينمائي احترافي.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+  <!-- Floating WhatsApp Quick Action Button -->
+  <a href="https://wa.me/966500000000?text=مرحباً%20استوديو%20كبتشرها،%20أرغب%20في%20الاستفسار%20عن%20الخدمات" target="_blank" class="floating-whatsapp-btn" title="تواصل معنا عبر WhatsApp">
+    <img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));">
+  </a>
+</body>
+</html>
