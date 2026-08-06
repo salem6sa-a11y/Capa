@@ -26,7 +26,7 @@ const DEFAULT_PORTFOLIO = [
     title: 'تصوير جوي سينمائي (درون) - لشركة موبايلي Mobily',
     category: 'videos',
     categoryName: '🎬 الفيديوهات السينمائية',
-    image: 'https://lh3.googleusercontent.com/d/1vicFjiHVvfJOl_6TicvT7y-wa7x1Zvq0=w1000',
+    image: 'https://lh3.googleusercontent.com/d/1vicFjiHVvfJOl_6TicvT7y-wa7x1Zvq0=w3840',
     isVideo: true,
     isDriveVideo: true,
     driveId: '1vicFjiHVvfJOl_6TicvT7y-wa7x1Zvq0',
@@ -39,7 +39,7 @@ const DEFAULT_PORTFOLIO = [
     title: 'تصوير فيديو شركة Riyadh Trips لتنظيم الرحلات',
     category: 'videos',
     categoryName: '🎬 الفيديوهات السينمائية',
-    image: 'https://lh3.googleusercontent.com/d/1wMNORh6-VltUKUYRrkNhbO4S6K0HdV3U=w1000',
+    image: 'https://lh3.googleusercontent.com/d/1wMNORh6-VltUKUYRrkNhbO4S6K0HdV3U=w3840',
     isVideo: true,
     isDriveVideo: true,
     driveId: '1wMNORh6-VltUKUYRrkNhbO4S6K0HdV3U',
@@ -52,7 +52,7 @@ const DEFAULT_PORTFOLIO = [
     title: 'تصوير شقة تصميم معماري مودرن',
     category: 'videos',
     categoryName: '🎬 الفيديوهات السينمائية',
-    image: 'https://lh3.googleusercontent.com/d/1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1=w1000',
+    image: 'https://lh3.googleusercontent.com/d/1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1=w3840',
     isVideo: true,
     isDriveVideo: true,
     driveId: '1bEgQx7KVUS4XtTEzlHfKNEL3pJOPOmy1',
@@ -61,16 +61,56 @@ const DEFAULT_PORTFOLIO = [
     date: '2026-08-05'
   },
   {
-    id: 'v_pOg-Lwk-HN0',
-    title: 'عرض كبتشرها السينمائي الخاص | CAPTURHA Showreel',
+    id: 'v_architectural_1BLZZqj8',
+    title: 'تصوير فيديو تصميم معماري سينمائي احترافي',
     category: 'videos',
     categoryName: '🎬 الفيديوهات السينمائية',
-    image: 'https://img.youtube.com/vi/pOg-Lwk-HN0/hqdefault.jpg',
+    image: 'assets/images/architectural_video_cover.jpg',
     isVideo: true,
-    youtubeId: 'pOg-Lwk-HN0',
-    duration: 'عرض سينمائي',
+    isDriveVideo: true,
+    driveId: '1BLZZqj8XNFPv8KgSf-LS_7m_6FXV0k5n',
+    duration: 'تصوير معماري',
     location: 'الرياض، المملكة العربية السعودية',
-    date: '2026-08-05'
+    date: '2026-08-06'
+  },
+  {
+    id: 'v_apt_design_18dTMFo5',
+    title: 'تصوير فيديو سينمائي - تصميم شقة سكنية فاخرة',
+    category: 'videos',
+    categoryName: '🎬 الفيديوهات السينمائية',
+    image: 'assets/images/apt_architectural_cover.jpg',
+    isVideo: true,
+    isDriveVideo: true,
+    driveId: '18dTMFo5JQs-MPLgjjNPIJ28nSmJl4-EU',
+    duration: 'تصوير معماري',
+    location: 'الرياض، المملكة العربية السعودية',
+    date: '2026-08-06'
+  },
+  {
+    id: 'v_ribsyard_1CwYehB7',
+    title: 'تصوير فيديو سينمائي - مطعم ريبز يارد بريميوم (Ribs Yard Premium)',
+    category: 'videos',
+    categoryName: '🎬 الفيديوهات السينمائية',
+    image: 'assets/images/ribsyard_cover.jpg',
+    isVideo: true,
+    isDriveVideo: true,
+    driveId: '1CwYe-hB7kcGAb7gyZMjgpLKMFaKZJWyx',
+    duration: 'تصوير مطاعم',
+    location: 'الرياض، المملكة العربية السعودية',
+    date: '2026-08-06'
+  },
+  {
+    id: 'v_mawarid_1s1gj5rW',
+    title: 'تصوير فيديو سينمائي - شركة موارد لتأجير المعدات',
+    category: 'videos',
+    categoryName: '🎬 الفيديوهات السينمائية',
+    image: 'assets/images/mawarid_video_cover.jpg',
+    isVideo: true,
+    isDriveVideo: true,
+    driveId: '1s1gj5rWOEfhO_8s4vf4e_KY_gXE8xEHz',
+    duration: 'توثيق مشاريع',
+    location: 'الرياض، المملكة العربية السعودية',
+    date: '2026-08-06'
   }
 ];
 
@@ -186,12 +226,15 @@ class DataStore {
 
   init() {
     let items = JSON.parse(localStorage.getItem('capturha_portfolio')) || [];
-    const sampleIds = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p_v1', 'p_v2', 'p_v3', 'n1_1lQqox', 'n2_1lQqox', 'n3_1lQqox'];
+    const sampleIds = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p_v1', 'p_v2', 'p_v3', 'n1_1lQqox', 'n2_1lQqox', 'n3_1lQqox', 'v_pOg-Lwk-HN0'];
     items = items.filter(item => item && !sampleIds.includes(item.id));
 
     DEFAULT_PORTFOLIO.forEach(defItem => {
-      if (!items.find(i => i.id === defItem.id)) {
+      const existing = items.find(i => i.id === defItem.id);
+      if (!existing) {
         items.unshift(defItem);
+      } else {
+        existing.image = defItem.image;
       }
     });
 

@@ -36,8 +36,8 @@
       <ul class="nav-menu">
         <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
         <li><a href="#about" class="nav-link">من نحن</a></li>
-        <li><a href="#services-section" class="nav-link">الخدمات</a></li>
         <li><a href="#portfolio-section" class="nav-link">معرض الأعمال</a></li>
+        <li><a href="#services-section" class="nav-link">الخدمات</a></li>
         <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
       </ul>
 
@@ -66,8 +66,8 @@
     <ul class="mobile-drawer-menu">
       <li><a href="#hero" onclick="toggleMobileMenu()">الرئيسية</a></li>
       <li><a href="#about" onclick="toggleMobileMenu()">من نحن</a></li>
-      <li><a href="#services-section" onclick="toggleMobileMenu()">الخدمات</a></li>
       <li><a href="#portfolio-section" onclick="toggleMobileMenu()">معرض الأعمال</a></li>
+      <li><a href="#services-section" onclick="toggleMobileMenu()">الخدمات</a></li>
       <li><a href="#contact" onclick="toggleMobileMenu()">تواصل معنا</a></li>
     </ul>
     <div style="padding: 1.5rem 1rem; border-top: 1px solid var(--border-color);">
@@ -107,13 +107,45 @@
           <div style="color: var(--color-primary); font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">من نحن</div>
           <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1.25rem;">نصنع قصصًا تُروى بالصورة</h3>
           <p id="about-text-content" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
-            كبتشرها علامة متخصصة في التصوير الفوتوغرافي وصناعة الأفلام، نقدم حلولًا بصرية احترافية تجمع بين الإبداع والدقة لنروي القصص بأعلى جودة، سواء للأفراد أو الشركات.
+            تأسست علامة <strong>كبتشرها (CAPTURHA)</strong> برؤية وإشراف <strong>سالم الدوسري</strong> لتكون منصة سعودية احترافية في التصوير الفوتوغرافي وصناعة الأفلام، نقدم حلولًا بصرية تجمع بين الفن والدقة لنروي قصص الأفراد والشركات بأعلى جودة.
           </p>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
+          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.25rem;">
             نقدم خدمات متكاملة تشمل تغطية المناسبات والاحتفالات، والمعارض والفعاليات، والتصوير الشخصي، وإنتاج الأفلام والمحتوى السينمائي، بالإضافة إلى تصوير الطبيعة والرحلات والتصوير الفلكي والتصوير الجوي، مع الاهتمام بأدق التفاصيل للوصول إلى تجربة بصرية استثنائية.
           </p>
+
+          <!-- Founder Circular Avatar Signature Badge (إطار دائري تحت نهاية النص) -->
+          <div style="display: flex; align-items: center; gap: 1.25rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+            <div style="position: relative; flex-shrink: 0;">
+              <img src="assets/images/salem_aldossary_founder.jpg" alt="سالم الدوسري - مؤسس كبتشرها" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary); box-shadow: 0 6px 20px rgba(53, 94, 168, 0.35); display: block;">
+              <span style="position: absolute; bottom: -2px; left: -2px; background: var(--color-primary); color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 50px; font-weight: 700; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">👑</span>
+            </div>
+            <div>
+              <div style="font-weight: 800; font-size: 1.15rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+                سالم الدوسري
+                <span style="background: rgba(53, 94, 168, 0.12); color: var(--color-primary); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 20px;">مؤسس كبتشرها</span>
+              </div>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 500;">مصور سينمائي وخبير وثائقي</div>
+            </div>
+          </div>
         </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Masonry Gallery (معرض الأعمال) -->
+  <section id="portfolio-section" class="portfolio-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>معرض الأعمال</h2>
+        <p>تصفح أحدث التحف البصرية واللقطات الفلكية المصورة بأفضل كاميرات وعدسات العالم.</p>
+      </div>
+
+      <!-- Filter Category Tabs -->
+      <div id="portfolio-filter-tabs" class="filter-tabs"></div>
+
+      <!-- Masonry Grid Container -->
+      <div id="portfolio-masonry-grid" class="masonry-grid"></div>
     </div>
   </section>
 
@@ -185,22 +217,6 @@
     </div>
   </section>
 
-  <!-- Portfolio Masonry Gallery (معرض الأعمال) -->
-  <section id="portfolio-section" class="portfolio-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>معرض الأعمال</h2>
-        <p>تصفح أحدث التحف البصرية واللقطات الفلكية المصورة بأفضل كاميرات وعدسات العالم.</p>
-      </div>
-
-      <!-- Filter Category Tabs -->
-      <div id="portfolio-filter-tabs" class="filter-tabs"></div>
-
-      <!-- Masonry Grid Container -->
-      <div id="portfolio-masonry-grid" class="masonry-grid"></div>
-    </div>
-  </section>
-
   <!-- Lightbox Modal (Pure Clean Image Display) -->
   <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()" style="top: 1.5rem; left: 1.5rem; z-index: 10;">✕</button>
@@ -256,45 +272,6 @@
     </div>
   </section>
 
-  <!-- Social Feeds (Instagram & YouTube) -->
-  <section id="social-feeds-section" class="social-feeds-section">
-    <div class="container">
-      <div class="social-feeds-grid">
-        <!-- Instagram Feed -->
-        <div class="social-box">
-          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/images/instagram_icon.png" alt="Instagram" style="width: 26px; height: 26px; object-fit: contain;"> أحدث المنشورات على Instagram</h3>
-          <div class="insta-grid">
-            <div class="insta-item"><img src="assets/images/hero_milkyway.jpg" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="assets/images/landscape_nature.jpg" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="assets/images/about_photographer.jpg" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="assets/images/commercial_automotive.jpg" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="assets/images/hero_milkyway.jpg" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="assets/images/landscape_nature.jpg" alt="Instagram Post"></div>
-          </div>
-        </div>
-
-        <!-- YouTube Feed -->
-        <div class="social-box">
-          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 26px; height: 26px; object-fit: contain;"> أحدث الأفلام على YouTube</h3>
-          <div class="yt-card glass-panel">
-            <div class="yt-video-embed">
-              <iframe src="https://www.youtube.com/embed/L_LUpnjgPso" title="YouTube video player" allowfullscreen></iframe>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div>
-                <h4 style="font-weight: 700; font-size: 1.1rem;">قناة كبتشرها | CAPTURHA Official</h4>
-                <p style="color: var(--text-dim); font-size: 0.85rem;">اشترك لمتابعة الأفلام والدروس السينمائية</p>
-              </div>
-              <a href="https://youtube.com" target="_blank" class="btn btn-primary" style="background: #ff0000; box-shadow: 0 5px 20px rgba(255,0,0,0.4); display: flex; align-items: center; gap: 0.4rem;">
-                <img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1);">
-                اشترك بالقناة
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Future Features Section Showcase (مميزات مستقبلية) -->
   <section id="future-features-section" style="padding: 6rem 0; background: rgba(53, 94, 168, 0.03);">
@@ -459,7 +436,7 @@
               <a href="https://instagram.com" target="_blank" class="social-icon-btn" title="Instagram" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/instagram_icon.png" alt="Instagram" style="width: 22px; height: 22px; object-fit: contain;"></a>
               <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/youtube_icon.png" alt="YouTube" style="width: 22px; height: 22px; object-fit: contain;"></a>
               <a href="https://tiktok.com" target="_blank" class="social-icon-btn" title="TikTok" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/tiktok_icon.png" alt="TikTok" style="width: 22px; height: 22px; object-fit: contain;"></a>
-              <a href="mailto:info@capturha.com" class="social-icon-btn" title="Email (Gmail)" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/email_icon.png" alt="Email" style="width: 22px; height: 22px; object-fit: contain;"></a>
+              <a href="mailto:capturha@gmail.com" class="social-icon-btn" title="Email (Gmail)" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/email_icon.png" alt="Email" style="width: 22px; height: 22px; object-fit: contain;"></a>
               <a href="https://wa.me/message/PO3C2ATYZWF7E1" target="_blank" class="social-icon-btn" title="WhatsApp" style="display: flex; align-items: center; justify-content: center; padding: 6px;"><img src="assets/images/whatsapp_icon.png" alt="WhatsApp" style="width: 22px; height: 22px; object-fit: contain;"></a>
             </div>
           </div>

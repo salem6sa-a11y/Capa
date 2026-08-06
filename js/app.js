@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFutureFeatureDrawers();
   applySectionVisibility();
   initScrollReveal();
+  initMediaProtection();
 });
 
 // Squarespace Photography Showcase Slider Controller
@@ -249,7 +250,7 @@ function renderPortfolioGrid(filter = 'all') {
       const isDrive = !!(item.isDriveVideo || item.driveId);
       return `
         <div class="portfolio-item glass-panel portfolio-video-item" onclick="openVideoPlayer('${clickArg}', ${isDrive})" style="cursor: pointer;">
-          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='assets/images/about_photographer.jpg';">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1; this.src='https://drive.google.com/thumbnail?id=' + ('${item.driveId || ''}') + '&sz=w3840';} else {this.src='assets/images/about_photographer.jpg';}">
           <div class="video-play-badge" style="position: absolute; top: 1rem; right: 1rem; background: rgba(239, 68, 68, 0.9); color: #ffffff; padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; z-index: 5; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);">
             ▶ ${item.duration || 'فيديو سينمائي'}
           </div>
@@ -429,7 +430,13 @@ function initContactForm() {
 
     window.appStore.addMessage({ name, email, phone, message });
 
-    alert('شكراً لتواصلك مع كبتشرها! تم استلام رسالتك وسنقوم بالرد عليك في أقرب وقت.');
+    const mailtoSubject = encodeURIComponent(`طلب جديد من الموقع - ${name}`);
+    const mailtoBody = encodeURIComponent(`الاسم الكامل: ${name}\nالبريد الإلكتروني: ${email}\nرقم الجوال: ${phone}\n\nتفاصيل الرسالة:\n${message}`);
+    const mailtoUrl = `mailto:capturha@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    window.location.href = mailtoUrl;
+
+    alert('شكراً لتواصلك مع كبتشرها! جاري تحويل رسالتك مباشرة إلى البريد الإلكتروني (capturha@gmail.com).');
     form.reset();
   });
 }
@@ -451,3 +458,30 @@ window.toggleMobileMenu = function() {
   const drawer = document.getElementById('mobile-nav-drawer');
   if (drawer) drawer.classList.toggle('active');
 };
+
+// Global Media Protection (منع التحميل وحماية الصور والفيديوهات من الحفظ والنسخ)
+function initMediaProtection() {
+  // Prevent Right-Click Context Menu on images, videos, and portfolio
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO' || e.target.tagName === 'IFRAME' || e.target.closest('.portfolio-item') || e.target.closest('#lightbox-modal')) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Prevent Dragging Images and Videos
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO' || e.target.closest('.portfolio-item')) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Prevent Save / Source View Shortcuts (Ctrl+S / Cmd+S / Ctrl+U / Ctrl+P)
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U' || e.key === 'p' || e.key === 'P')) {
+      e.preventDefault();
+      return false;
+    }
+  });
+}
