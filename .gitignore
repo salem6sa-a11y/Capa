@@ -1,0 +1,9 @@
+# Temporary & System Files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# IDE / Editor Settings
+.vscode/
+.idea/
